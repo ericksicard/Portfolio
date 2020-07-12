@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     particleCanva: {
-        position: 'absolute'
+        position: 'absolute',
+        opacity: 0.5
     }
 })
 

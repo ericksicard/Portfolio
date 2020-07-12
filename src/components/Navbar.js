@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer'
 import {
@@ -19,16 +20,20 @@ import {
     AssignmentInd,
     Home,
     Apps,
-    ContactMail
+    ContactMail,
+    LinkOffTwoTone
 } from '@material-ui/icons'
 import avatar from '../profile-picture.jpg'
 
 //CSS STYLES
 const useStyles = makeStyles( theme => ({
+    navBar: {
+        background: 'rgb(0,41,131)'
+    },
     menuSliderContainer: {
         width: 250,
-        background: '#3F51B5',
-        height: '100%'
+        height: '100%',
+        background: 'rgb(0,41,131)'
     },
     avatar: {
         display: 'block',
@@ -45,11 +50,13 @@ const useStyles = makeStyles( theme => ({
 const menuItems = [
     {
         listIcon: <Home />,
-        listText: 'Home'
+        listText: 'Home',
+        listPath: '/'
     },
     {
         listIcon: <AssignmentInd />,
-        listText: 'Resume'
+        listText: 'Resume',
+        listPath: '/resume'
     },
     {
         listIcon: <Apps />,
@@ -80,7 +87,7 @@ const Navbar = () => {
             <List>
                 {
                     menuItems.map( (item, key) => (
-                        <ListItem button key={key}>
+                        <ListItem button key={key} component={Link} to={item.listPath}>
                             <ListItemIcon className={classes.listItem}>{ item.listIcon }</ListItemIcon>
                             <ListItemText className={classes.listItem} primary={item.listText} />
                         </ListItem>                        
@@ -93,8 +100,8 @@ const Navbar = () => {
     return (
         <>
         <Box component='nav'>
-            <AppBar position='static'>
-                <Toolbar>
+            <AppBar position='static' >
+                <Toolbar className={classes.navBar}>
                     <IconButton onClick={ event => toggleSlider(true) }>
                         <ArrowBack style={{ color: '#ffffff' }} />
                     </IconButton>
