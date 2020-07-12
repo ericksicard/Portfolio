@@ -21,7 +21,7 @@ import {
     Apps,
     ContactMail
 } from '@material-ui/icons'
-import avatar from '../avatar.png'
+import avatar from '../profile-picture.jpg'
 
 //CSS STYLES
 const useStyles = makeStyles( theme => ({
