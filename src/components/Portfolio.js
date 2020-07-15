@@ -19,13 +19,12 @@ import project4 from '../OrlandoDist.PNG'
 
 const useStyles = makeStyles({
     mainContainer: {
-        background: '#233',
+        background: '#E1E2E1',
         height: '100%'
     },
     cardContainer: {
-        maxWidth: 345,
-        margin: '5rem',
-        margin: '5rem auto'
+        maxWidth: 400,
+        margin: '3rem auto'
     }
 })
 
@@ -56,7 +55,7 @@ const Portfolio = () => {
                             <Button size='small' color='primary'>
                                 Share
                             </Button>
-                            <Button size='small' color='primary'>
+                            <Button size='small' color='primary' href='https://ericksicard.github.io/Ironhack-maze-game-project/'>
                                 Live Demo
                             </Button>
                         </CardActions>
@@ -80,10 +79,10 @@ const Portfolio = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size='small' color='primary'>
+                            <Button size='small' color='primary' >
                                 Share
                             </Button>
-                            <Button size='small' color='primary'>
+                            <Button size='small' color='primary' href='https://mern-ironsocial.herokuapp.com/'>
                                 Live Demo
                             </Button>
                         </CardActions>
@@ -110,7 +109,7 @@ const Portfolio = () => {
                             <Button size='small' color='primary'>
                                 Share
                             </Button>
-                            <Button size='small' color='primary'>
+                            <Button size='small' color='primary' href='https://multivendor-marketplace.herokuapp.com/'>
                                 Live Demo
                             </Button>
                         </CardActions>
@@ -137,7 +136,7 @@ const Portfolio = () => {
                                 <Button size='small' color='primary'>
                                     Share
                                 </Button>
-                                <Button size='small' color='primary'>
+                                <Button size='small' color='primary' href='https://www.orlandodist.com/'>
                                     Live Demo
                                 </Button>
                             </CardActions>
