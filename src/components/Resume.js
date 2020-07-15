@@ -5,7 +5,7 @@ import { Typography, Box, List, ListItem, ListItemText } from '@material-ui/core
 
 const useStyles = makeStyles( theme =>({
     mainContainer: {
-        background: "#3f51b5"
+        background: "#E1E2E1"
     },
     timeLine: {
         position: "relative",
@@ -15,7 +15,7 @@ const useStyles = makeStyles( theme =>({
             content: "''",
             position: "absolute",
             height: "100%",
-            border: "1px solid tan",
+            border: "1px solid #ff7961",
             right: "40px",
             top: 0
         },
@@ -34,7 +34,7 @@ const useStyles = makeStyles( theme =>({
     },
     timeLineItem: {
         padding: '1rem',
-        borderBottom: '2px solid tan',
+        borderBottom: '2px solid #ff7961',
         position: 'relative',
         margin: '1rem 3rem 1rem 1rem',
         clear: 'both',
@@ -72,7 +72,7 @@ const useStyles = makeStyles( theme =>({
         maxWidth: '9.375rem',
         margin: '0 3rem 0 auto',
         fontSize: '1.8rem',
-        background: '#ff7961',
+        background: '#3f51b5',
         color: 'white',
         lineHeight: 1,
         padding: '0.5rem 0 1rem',
@@ -92,12 +92,12 @@ const useStyles = makeStyles( theme =>({
         }
     },
     heading: {
-        color: 'white',
+        color: '#1D1D1D',
         padding: '3rem 0',
         textTransform: 'uppercase'
     },
     subHeading: {
-        color: 'white',
+        color: '#1D1D1D',
         padding: '0',
         textTransform: 'uppercase'
     }
