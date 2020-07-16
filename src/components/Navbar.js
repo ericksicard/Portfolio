@@ -20,20 +20,20 @@ import {
     AssignmentInd,
     Home,
     Apps,
-    ContactMail,
-    LinkOffTwoTone
+    ContactMail
 } from '@material-ui/icons'
 import avatar from '../profile-picture.jpg'
+import Footer from './Footer'
 
 //CSS STYLES
 const useStyles = makeStyles( theme => ({
     navBar: {
-        background: 'rgb(0,41,131)'
+        background: '#002984'
     },
     menuSliderContainer: {
-        width: 250,
+        width: 300,
         height: '100%',
-        background: 'rgb(0,41,131)'
+        background: '#3f51b5'
     },
     avatar: {
         display: 'block',
@@ -116,6 +116,7 @@ const Navbar = () => {
                     onClose={ event => toggleSlider(false) }
                     >
                         { sideList() }
+                        <Footer />
                     </Drawer>
                 </Toolbar>
             </AppBar>
