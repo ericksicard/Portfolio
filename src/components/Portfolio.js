@@ -51,9 +51,6 @@ const Portfolio = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size='small' color='primary'>
-                                Share
-                            </Button>
                             <Button size='small' color='primary' href='https://ericksicard.github.io/Ironhack-maze-game-project/'>
                                 Live Demo
                             </Button>
@@ -77,9 +74,6 @@ const Portfolio = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size='small' color='primary' >
-                                Share
-                            </Button>
                             <Button size='small' color='primary' href='https://mern-ironsocial.herokuapp.com/'>
                                 Live Demo
                             </Button>
@@ -103,9 +97,6 @@ const Portfolio = () => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size='small' color='primary'>
-                                Share
-                            </Button>
                             <Button size='small' color='primary' href='https://multivendor-marketplace.herokuapp.com/'>
                                 Live Demo
                             </Button>
@@ -129,9 +120,6 @@ const Portfolio = () => {
                             </CardContent>
                         </CardActionArea>
                             <CardActions>
-                                <Button size='small' color='primary'>
-                                    Share
-                                </Button>
                                 <Button size='small' color='primary' href='https://www.orlandodist.com/'>
                                     Live Demo
                                 </Button>

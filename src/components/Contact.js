@@ -18,7 +18,7 @@ import emailjs from 'emailjs-com'
          transform: 'translate(-50%, -50%)',
          position: 'absolute',
          background: 'rgba(0, 41, 80, 0.5)',
-         padding: '5rem'
+         padding: '3rem'
      },
      button: {
          marginTop: '1rem',
@@ -115,7 +115,7 @@ import emailjs from 'emailjs-com'
                     /> <br/>
                     <InputField 
                         fullWidth={true} 
-                        label='Company name' 
+                        label='Company' 
                         variant='outlined' 
                         margin='dense' 
                         size='medium' 
