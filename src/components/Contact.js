@@ -77,8 +77,6 @@ import emailjs from 'emailjs-com'
             reply_to: values.email
         }
 
-        console.log(userID)
-
         emailjs.send(serviceID, templteID, templateParams, userID)
             .then( response => {
                 console.log('SUCCES!', response.status, response.text)
