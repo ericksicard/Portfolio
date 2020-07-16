@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
@@ -8,7 +8,8 @@ import {
     Button,
     Grid
  } from '@material-ui/core';
- import SendIcon from '@material-ui/icons/Send';
+import SendIcon from '@material-ui/icons/Send';
+import emailjs from 'emailjs-com'
 
  const useStyles = makeStyles( theme => ({
      form: {
@@ -48,9 +49,43 @@ import {
      }
  })(TextField)
 
+ 
+ const Contact = () => {
+     const classes = useStyles();     
+     const [values, setValues] = useState({
+         name: '',
+         email: '',
+         company: '',
+         comments: ''
+     });
+     
+     const handleChange = (event, name) => {
+         const value = event.target.value;
+        setValues({ ...values, [name]: value })
+     }
 
-const Contact = () => {
-    const classes = useStyles();
+    const handleSubmit = event => {
+        event.preventDefault();
+        const serviceID = process.env.REACT_APP_SERVICEID;
+        const templteID = process.env.REACT_APP_TEMPLATEID;
+        const userID = process.env.REACT_APP_USERID;
+        let templateParams = {
+            to_name: 'Erick Sicard',
+            from_name: values.name,
+            company_name: values.company,
+            message_html: values.comments,
+            reply_to: values.email
+        }
+
+        console.log(userID)
+
+        emailjs.send(serviceID, templteID, templateParams, userID)
+            .then( response => {
+                console.log('SUCCES!', response.status, response.text)
+                setValues({ ...values, name: '', email: '', company: '', comments: ''})                
+            })
+            .catch( err => { console.log(err) })
+    }
 
     return (
         <Box component='div' >
@@ -60,10 +95,55 @@ const Contact = () => {
                     <Typography variant='h5' style={{ color: '#f44336', textAlign: 'center', textTransform: 'uppercase' }}>
                         contact form
                     </Typography>
-                    <InputField fullWidth={true} label='Name' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color:'white'}}}/> <br/>
-                    <InputField fullWidth={true} label='Email' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color:'white'}}}/> <br/>
-                    <InputField fullWidth={true} label='Company name' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color:'white'}}}/>
-                    <Button className={classes.button} variant='outlined' fullWidth={true} endIcon={<SendIcon/>} >
+                    <InputField 
+                        fullWidth={true}
+                        label='Name'
+                        variant='outlined'
+                        margin='dense'
+                        size='medium'
+                        inputProps={{style:{ color:'white'}}}
+                        value={values.name}
+                        onChange={ event => handleChange(event, 'name')}
+                    /> <br/>
+                    <InputField 
+                        fullWidth={true} 
+                        label='Email' 
+                        variant='outlined' 
+                        margin='dense' 
+                        size='medium' 
+                        inputProps={{style:{ color:'white'}}}
+                        value={values.email}
+                        onChange={ event => handleChange(event, 'email')}
+                    /> <br/>
+                    <InputField 
+                        fullWidth={true} 
+                        label='Company name' 
+                        variant='outlined' 
+                        margin='dense' 
+                        size='medium' 
+                        inputProps={{style:{ color:'white'}}}
+                        value={values.company}
+                        onChange={ event => handleChange(event, 'company')}
+                    />
+                    <InputField 
+                        fullWidth={true} 
+                        label='Comments' 
+                        variant='outlined' 
+                        margin='dense' 
+                        size='medium' 
+                        inputProps={{style:{ color:'white'}}}
+                        value={values.comments}
+                        onChange={ event => handleChange(event, 'comments')} 
+                        multiline
+                    />
+                    <Button
+                        className={classes.button} 
+                        variant='outlined' 
+                        fullWidth={true} 
+                        endIcon={<SendIcon/>}
+                        value='Submit'
+                        onClick={ event => handleSubmit(event) } 
+                    >
                         contact me
                     </Button>
                 </Box>
